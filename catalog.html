@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/styles/style-catalog.css">
+    <link rel="stylesheet" href="src/styles/adaptive-catalog.css">
+    <title>Каталог</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="top">
+            <a href="./index.html"><img id="logo-ico" src="src/images/logo.png" alt="logo-ico"></a>
+            <div class="header-top-text">
+                <a class="header__link" href="#">Подать объявляние</a>
+                <a class="header__link" href="#">Войти</a>
+            </div>
+
+                                <!-- Модальное окно для заказа -->
+                                <div id="orderModal" class="modal">
+                                    <div class="modal__content">
+                                        <div class="modal__wrapper">
+                                            <span class="modal__close">&times;</span>
+                                            <h2 class="modal__title">Сделать заказ</h2>
+                                        </div>
+                                        <form id="orderForm" class="modal__form">
+                                            <label for="name" class="modal__label">Имя:</label>
+                                            <input type="text" id="name" name="name" class="modal__input" required>
+                                            
+                                            <label for="email" class="modal__label">Email:</label>
+                                            <input type="email" id="email" name="email" class="modal__input" required>
+                                            
+                                            <label for="phone" class="modal__label">Телефон:</label>
+                                            <input type="tel" id="phone" name="phone" class="modal__input" required>
+                                            
+                                            <label for="message" class="modal__label">Сообщение:</label>
+                                            <textarea id="message" name="message" class="modal__textarea"></textarea>
+                                            
+                                            <button type="submit" class="modal__button">Отправить заказ</button>
+                                        </form>
+                                    </div>
+                                </div>
+
+            <div class="menu">
+                <div class="li-account"><a class="menuItem hmb a-account" href="#"><img class="ico-account" src="./src/images/ico-account.svg" alt=""></a></div>
+                <div class="hmb__modified"><a class="menuItem hmb" href="#">Подать объявление</a></div>
+                
+                <div><a class="menuItem hmb" href="#">Фильтры</a></div>
+                <div><a class="menuItem hmb" href="#">Посуточно</a></div>
+                <div><a class="menuItem hmb" href="#">Квартиру</a></div>
+                <div><a class="menuItem hmb" href="#">Комнатность</a></div>
+                <div class="hmb__modified"><a class="menuItem hmb" href="#">Цена</a></div>
+                <div class="my-hr">line</div>
+                <div class="menuItem__wrapper">
+                    <input class="menuItem__input" type="text" placeholder="Город, жк, адрес, метро, район">
+                    <button class="reset-Button"><img src="./src/images/ico-search.svg" alt=""></button>
+                </div>
+            </div>
+              <button class="hamburger">
+                <img class="menuIcon" src="./src/images/ico-menu.svg" alt="">
+                <img class="closeIcon" src="./src/images/ico-close.svg" alt="">
+              </button>
+
+        </div>
+        <div class="bottom">
+                <button class="header__link">Фильтры</button>
+                <button class="header__link">Посуточно</button>
+                <button class="header__link">Квартиру</button>
+                <button class="header__link">Комнатность</button>
+                <button class="header__link">Цена</button>
+                <div class="search">
+                    <input type="text" placeholder="Город, жк, адрес, метро, район">
+                </div>
+                <button class="header__link">Найти</button>
+        </div>
+    </header>
+    <main>
+        <h1>Аренда квартир в Вологде на длительный срок и посуточно</h1>
+        <p>Найдено 50 объявлений</p>
+        <div class="advertisements">
+            <div class="announcement">
+                <div class="announcement-images">
+                    <img class="flat1-1" src="src/images/floats/flat1-1.jpg" alt="main-photo-flat">
+                    <img class="flat1-2" src="src/images/floats/flat1-2.jpg" alt="alt-photo-flat">
+                    <img class="flat1-3" src="src/images/floats/flat1-3.jpg" alt="alt-photo-flat">
+                </div>
+                <div class="announcement-text">
+                    <h2 class="announcement-text-title">1-комн. квартира, 43 м², 6/9 этаж</h2>
+                    <p class="announcement-text-place">Вологодская область, Вологда, мкр. 5-й, Технический переулок, 56А</p>
+                    <p class="announcement-text-price">50 000 Р/мес.</p>
+                    <p class="announcement-text-description">Новая квартира с дизайнерским ремонтом в спальном районе города. Полностью укомплектована всем необходимым: мебель и бытовая техника. Закрытая территория, детские площадки, видеонаблюдение.</p>
+                    <button id="orderButton" class="announcement__link" onclick="makeOrder()">Забронировать</button>
+                </div>
+            </div>
+        </div>
+        <div class="advertisements">
+            <div class="announcement">
+                <div class="announcement-images">
+                    <img class="flat1-1" src="src/images/floats/flat2-1.webp" alt="main-photo-flat">
+                    <img class="flat1-2" src="src/images/floats/flat2-2.webp" alt="alt-photo-flat">
+                    <img class="flat1-3" src="src/images/floats/flat-2-3.webp" alt="alt-photo-flat">
+                </div>
+                <div class="announcement-text">
+                    <h2 class="announcement-text-title">3-комн. квартира, 147 м², 11/20 этаж</h2>
+                    <p class="announcement-text-place">Вологодская область, Вологда, мкр. 5-й, Золотой переулок, 21А</p>
+                    <p class="announcement-text-price">150 000 Р/сут.</p>
+                    <p class="announcement-text-description">Сочетание элегантной классики и эпатажного арт-деко. Закрытая территория, детские площадки, видеонаблюдение.</p>
+                    <button id="orderButton" class="announcement__link" onclick="makeOrder()">Забронировать</button>
+                </div>
+            </div>
+        </div>
+        <div class="advertisements">
+            <div class="announcement">
+                <div class="announcement-images">
+                    <img class="flat1-1" src="src/images/floats/float3-1.jpg" alt="main-photo-flat">
+                    <img class="flat1-2" src="src/images/floats/float3-2.jpg" alt="alt-photo-flat">
+                    <img class="flat1-3" src="src/images/floats/float3-3.jpg" alt="alt-photo-flat">
+                </div>
+                <div class="announcement-text">
+                    <h2 class="announcement-text-title">2-комн. квартира, 89 м², 1/5 этаж</h2>
+                    <p class="announcement-text-place">Вологодская область, Вологда, Заречье, Городской Вал, 26Б</p>
+                    <p class="announcement-text-price">75 000 Р/мес.</p>
+                    <p class="announcement-text-description">Уникальная квартира с антикварной мебелью и элементами декора, рассказывающими о прошлом.</p>
+                    <button id="orderButton" class="announcement__link" onclick="makeOrder()">Забронировать</button>
+                </div>
+            </div>
+        </div>
+        <div class="advertisements">
+            <div class="announcement">
+                <div class="announcement-images">
+                    <img class="flat1-1" src="src/images/floats/float4-1.jpg" alt="main-photo-flat">
+                    <img class="flat1-2" src="src/images/floats/float4-2.jpg" alt="alt-photo-flat">
+                    <img class="flat1-3" src="src/images/floats/float4-3.jpg" alt="alt-photo-flat">
+                </div>
+                <div class="announcement-text">
+                    <h2 class="announcement-text-title">1-комн. квартира, 45 м², 3/6 этаж</h2>
+                    <p class="announcement-text-place">Вологодская область, Вологда, мкр. Заречье, Фрязиновская, 26Б</p>
+                    <p class="announcement-text-price">5 000 Р/сут.</p>
+                    <p class="announcement-text-description">Свежая квартира с новым ремонтом и всей необходимой мебелью, готовая к заселению без дополнительных затрат.</p>
+                    <button id="orderButton" class="announcement__link" onclick="makeOrder()">Забронировать</button>
+                </div>
+            </div>
+        </div>
+        <div class="advertisements">
+            <div class="announcement">
+                <div class="announcement-images">
+                    <img class="flat1-1" src="src/images/floats/float5-1.jpg" alt="main-photo-flat">
+                    <img class="flat1-2" src="src/images/floats/float5-2.jpg" alt="alt-photo-flat">
+                    <img class="flat1-3" src="src/images/floats/float5-3.jpg" alt="alt-photo-flat">
+                </div>
+                <div class="announcement-text">
+                    <h2 class="announcement-text-title">1-комн. квартира, 43 м², 8/20 этаж</h2>
+                    <p class="announcement-text-place">Вологодская область, Вологда, мкр. Заречье, Дальняя, 33</p>
+                    <p class="announcement-text-price">25 000 Р/мес.</p>
+                    <p class="announcement-text-description">Уютная квартира с видом на зелёный парк, большой кухней и спальней, где можно наслаждаться утренним кофе.</p>
+                    <button id="orderButton" class="announcement__link" onclick="makeOrder()">Забронировать</button>
+                </div>
+            </div>
+        </div>
+        <div class="advertisements">
+            <div class="announcement">
+                <div class="announcement-images">
+                    <img class="flat1-1" src="src/images/floats/float6-1.jpg" alt="main-photo-flat">
+                    <img class="flat1-2" src="src/images/floats/float6-2.jpg" alt="alt-photo-flat">
+                    <img class="flat1-3" src="src/images/floats/float6-3.jpg" alt="alt-photo-flat">
+                </div>
+                <div class="announcement-text">
+                    <h2 class="announcement-text-title">2-комн. квартира, 90 м², 11/12 этаж</h2>
+                    <p class="announcement-text-place">Вологодская область, Вологда, Центр, 3-го Интернационала, 5</p>
+                    <p class="announcement-text-price">2 000 Р/сут.</p>
+                    <p class="announcement-text-description">Квартира в историческом центре с высокими потолками, лепниной и паркетом. Отличный вариант для ценителей старины.</p>
+                    <button id="orderButton" class="announcement__link" onclick="makeOrder()">Забронировать</button>
+                </div>
+            </div>
+        </div>
+        <div class="advertisements">
+            <div class="announcement">
+                <div class="announcement-images">
+                    <img class="flat1-1" src="src/images/floats/float7-1.jpg" alt="main-photo-flat">
+                    <img class="flat1-2" src="src/images/floats/float7-2.jpg" alt="alt-photo-flat">
+                    <img class="flat1-3" src="src/images/floats/float7-3.jpg" alt="alt-photo-flat">
+                </div>
+                <div class="announcement-text">
+                    <h2 class="announcement-text-title">2-комн. квартира, 70 м², 2/2 этаж</h2>
+                    <p class="announcement-text-place">Вологодская область, Вологда, Пакля, Маршала Конева, 7А</p>
+                    <p class="announcement-text-price">40 335 Р/мес.</p>
+                    <p class="announcement-text-description">Просторная двухкомнатная квартира с балконом, детской площадкой во дворе и хорошей звукоизоляцией.</p>
+                    <button id="orderButton" class="announcement__link" onclick="makeOrder()">Забронировать</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <hr class="custom-hr">
+    <footer>
+        <ul>
+            <a>© ООО «MVP», 2024−2030</a>&emsp; &emsp;
+            <a>Номер телефона: +7 800 535 35 35</a>&emsp; &emsp;
+            <a>Почта: MVP2024@gmail.com</a>
+    </footer>
+    <hr>
+    <script src="./src/scripts/script-order.js"></script>
+    <script src="./src/scripts/script.js"></script>
+</body>
+</html>

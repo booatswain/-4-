@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная страница</title>
+    <link rel="stylesheet" href="./src/styles/style.css">
+    <link rel="stylesheet" href="./src/styles/adaptive.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <ul class="header-ul-left">
+            <li><a href="#"><img id="logo-ico" src="src/images/logo.png" alt="logo-ico"></a></li>
+            <li class="hide"><a href="#">Главная</a></li>
+            <li class="hide"><a href="./catalog.html">Недвижимость</a></li>
+            <li class="hide"><a href="#">Контакты</a></li>
+            <li class="hide"><a href="#goInfoCompany">О нас</a></li>
+        </ul>
+            
+        <ul class="header-ul-right">
+            <li><a href="#">MVP2024@gmail.com</a></li>
+            <li><a href="#">+7 (800) 535-35-35</a></li>
+            <li><a href="#" id="orderButton" class="header__order-button">Сделать заказ</a></li>
+        </ul>
+                    <!-- Модальное окно для заказа -->
+                    <div id="orderModal" class="modal">
+                        <div class="modal__content">
+                            <div class="modal__wrapper">
+                                <span class="modal__close">&times;</span>
+                                <h2 class="modal__title">Сделать заказ</h2>
+                            </div>
+                            <form id="orderForm" class="modal__form">
+                                <label for="name" class="modal__label">Имя:</label>
+                                <input type="text" id="name" name="name" class="modal__input" required>
+                                
+                                <label for="email" class="modal__label">Email:</label>
+                                <input type="email" id="email" name="email" class="modal__input" required>
+                                
+                                <label for="phone" class="modal__label">Телефон:</label>
+                                <input type="tel" id="phone" name="phone" class="modal__input" required>
+                                
+                                <label for="message" class="modal__label">Сообщение:</label>
+                                <textarea id="message" name="message" class="modal__textarea"></textarea>
+                                
+                                <button type="submit" class="modal__button">Отправить заказ</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="menu">
+                        <div class="li-account"><a class="menuItem hmb a-account" href="#"><img class="ico-account" src="./src/images/ico-account.svg" alt=""></a></div>
+                        <div class="hmb__modified"><a class="menuItem hmb" href="#">Подать объявление</a></div>
+                        
+                        <div><a class="menuItem hmb" href="#">Главная</a></div>
+                        <div><a class="menuItem hmb" href="#">Недвижимость</a></div>
+                        <div><a class="menuItem hmb" href="#">Контакты</a></div>
+                        <div><a class="menuItem hmb" href="#goInfoCompany" onclick="goInfoCompany()">О нас</a></div>
+                        <div><a class="menuItem hmb" href="#" onclick="makeOrder()">Сделать заказ</a></div>
+                        <div class="my-hr">line</div>
+                        <div class="menuItem__wrapper">
+                            <input class="menuItem__input" type="text" placeholder="Город, жк, адрес, метро, район">
+                            <button class="reset-Button"><img src="./src/images/ico-search.svg" alt=""></button>
+                        </div>
+                    </div>
+                      <button class="hamburger">
+                        <img class="menuIcon" src="./src/images/ico-menu.svg" alt="">
+                        <img class="closeIcon" src="./src/images/ico-close.svg" alt="">
+                      </button>
+    </header>
+    <main>
+        <section class="main-section">
+            <header class="main-text">
+                <h1>Аренда недвижимости в Вологде</h1>
+                <p>На длительной срок или посуточно</p>
+                <a class="main-btn" href="./catalog.html">Смотреть варианты</a>
+            </header>
+            <img class="main-image" src="src/images/main-image.png" alt="main-image">
+        </section>
+        <div class="section__info">
+            <div class="info__card">
+                <img src="./src/images/card-1.png" alt="Картинка документов">
+                <p>Предоставляем отчётные документы</p>
+            </div>
+            <div class="info__card">
+                <img src="./src/images/card-2.png" alt="Картинка документов">
+                <p>Наличный и безналичный расчёт</p>
+            </div>
+            <div class="info__card">
+                <img src="./src/images/card-3.png" alt="Картинка документов">
+                <p>Бронирование и заселение круглосуточно</p>
+            </div>
+            <div class="info__card">
+                <img src="./src/images/card-4.png" alt="Картинка документов">
+                <p>Полная конфиденциальность</p>
+            </div>
+        </div>
+        <hr>
+        <section class="section__apartaments">
+            <h2>Наши квартиры</h2>
+            <div class="section__container">
+                <div class="apartaments__body__firstCard">
+                    <p class="apartaments__title">Однокомнатная квартира</p>
+                    <p class="apartaments__price">Сутки: <span class="fw-bold">1500</span> руб.</p>
+                    <div class="apartaments__address">
+                        <div class="apartaments__address-inner">
+                            <img class="apartaments__image" src="./src/images/ico-gps.png" alt="Иконка GPS">
+                            <p>Вологда, ул. Судоремонтная 48а</p>
+                        </div>
+                        <div class="link__wrapper">
+                            <a class="apartaments__link" href="./catalog.html">Подробнее</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="apartaments__body__secondCard">
+                    <p class="apartaments__title">Однокомнатная квартира</p>
+                    <p class="apartaments__price">Сутки: <span class="fw-bold">1500</span> руб.</p>
+                    <div class="apartaments__address">
+                        <div class="apartaments__address-inner">
+                            <img class="apartaments__image" src="./src/images/ico-gps.png" alt="Иконка GPS">
+                            <p>Вологда, ул. Советский проспект, 132</p>
+                        </div>
+                        <div class="link__wrapper">
+                            <a class="apartaments__link" href="./catalog.html">Подробнее</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="apartaments__body__thirdCard">
+                    <p class="apartaments__title">Трёхкомнатная квартира</p>
+                    <p class="apartaments__price">Сутки: <span class="fw-bold">4500</span> руб.</p>
+                    <div class="apartaments__address">
+                        <div class="apartaments__address-inner">
+                            <img class="apartaments__image" src="./src/images/ico-gps.png" alt="Иконка GPS">
+                            <p>Вологда, ул. Горького, 57</p>
+                        </div>
+                        <div class="link__wrapper">
+                            <a class="apartaments__link" href="./catalog.html">Подробнее</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="bg-wall"></div>
+        <section id="goInfoCompany" class="section__infoCompany">
+            <h2 class="infoCompany__title">Чем компания занимается?</h2>
+            <p class="infoCompany__text">Наша компания специализируется на продаже и аренде недвижимости. 
+                Мы предлагаем широкий ассортимент объектов, включая квартиры, дома, коммерческие помещения и земельные участки. 
+                Наша цель — помочь клиентам найти идеальное жилье или выгодное инвестиционное предложение.</p>
+            <p class="infoCompany__text">Мы гарантируем профессиональный подход к каждому клиенту, 
+                предоставляя полную информацию о рынке недвижимости, а также юридическую поддержку на всех этапах сделки. 
+                Наша команда опытных агентов всегда готова ответить на ваши вопросы и предложить лучшие варианты, соответствующие вашим требованиям.</p>
+            <p class="infoCompany__text">С нами вы можете быть уверены в прозрачности сделок и высоком уровне сервиса. 
+                Мы стремимся к тому, чтобы процесс покупки или аренды недвижимости был максимально комфортным и безопасным для вас.</p>
+            <img src="./src/images/infoCompany.png" alt="">
+        </section>
+    </main>
+    <hr class="custom-hr">
+    <footer>
+        <ul>
+                <a>© ООО «MVP», 2024−2030</a>&emsp; &emsp;
+                <a>Номер телефона: +7 800 535 35 35</a>&emsp; &emsp;
+                <a>Почта: MVP2024@gmail.com</a>
+        </ul>
+    </footer>
+    <hr>
+    <script src="./src/scripts/script-order.js"></script>
+    <script src="./src/scripts/script.js"></script>
+</body>
+</html>
